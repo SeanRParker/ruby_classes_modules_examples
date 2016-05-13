@@ -1,27 +1,42 @@
 require 'pry'
-require 'babbler'
 
-puts 'YAY Friday!'
+class Person
+  # attr_accessor - read & write
+  # attr_reader - read only
+  # attr_writer - write only
+  attr_accessor :first_name, :last_name, :age, :gender
 
-def keep_coding
-  puts 'Pop question: Are you going to keep coding over the weekend? (yes / no)'
-  input = gets.strip.downcase
-
-  # if input == 'quit'
-  #   exit
-  # else
-  #   input = input.to_i
+  # def initialize (first_name, last_name, age, gender)
+  #   @first_name = first_name
+  #   @last_name = last_name
+  #   @age = age
+  #   @gender = gender
   # end
 
-  # input == 'quit' ? exit : input = input.to_i
-
-  if input == 'yes'
-    puts 'Good answer!'
-  else
-    # puts 'You serious, bro? Do you even code?'
-    puts Babbler.babble
-    keep_coding
+  def initialize
+    puts "First Name:"
+    @first_name = gets.strip
+    puts "Last Name:"
+    @last_name = gets.strip
+    puts "Age:"
+    @age = gets.strip.to_i
+    puts "Gender:"
+    @gender = gets.strip
   end
+
 end
 
-keep_coding
+# sean = Person.new('Sean', 'Parker', 28, 'Male')
+person1 = Person.new
+puts person1.first_name
+puts person1.last_name
+puts person1.age
+puts person1.gender
+
+
+# dave = Person.new('Dave', 'Jungst', 35, 'Male')
+person2 = Person.new
+puts person2.first_name
+puts person2.last_name
+puts person2.age
+puts person2.gender
